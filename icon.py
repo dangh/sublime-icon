@@ -1,6 +1,6 @@
 import subprocess
 import os
-
+import sublime
 
 def plugin_loaded():
     fileicon = os.path.abspath(__file__ + '/../bin/fileicon')
