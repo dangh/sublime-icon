@@ -1,0 +1,19 @@
+[
+  { "id": "preferences",
+    "children": [
+      { "caption": "Package Settings",
+        "mnemonic": "P",
+        "id": "package-settings",
+        "children": [
+          { "caption": "sublime-icon",
+            "command": "edit_settings",
+            "args": {
+              "base_file": "${packages}/sublime-icon/sublime-icon.sublime-settings",
+              "default": "{\n\t$0\n}\n"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
