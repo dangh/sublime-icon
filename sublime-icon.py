@@ -46,19 +46,9 @@ def update_icon(settings=None):
     if not os.path.isdir(CACHE_PATH):
         os.mkdir(CACHE_PATH)
 
-    current_icon = None
     icon_path = os.path.join(
         CACHE_PATH, "icon_" + hashlib.md5(icon_url.encode()).hexdigest()
     )
-    try:
-        with open(os.path.join(CACHE_PATH, "icon_current"), "r") as f:
-            current_icon = f.readline()
-    except:
-        pass
-
-    if current_icon == icon_path:
-        log("icon already set")
-        return
 
     if not os.path.isfile(icon_path):
         log("download icon from", icon_url)
@@ -66,9 +56,6 @@ def update_icon(settings=None):
 
     log("set icon from", icon_url)
     fileicon(["set", APP_PATH, icon_path])
-
-    with open(os.path.join(CACHE_PATH, "icon_current"), "w") as f:
-        f.write(icon_path)
 
 
 def plugin_loaded():
